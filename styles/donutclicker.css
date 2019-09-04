@@ -1,0 +1,56 @@
+/* <this whole file makes it pretty */
+body {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: lightblue;
+}
+
+h1 {
+  text-align: center;
+  font-family: Impact, Charcoal, sans-serif;
+}
+
+div.donut {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+div.upgrades {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+div.upgradebox {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  background: pink;
+  margin: 10px;
+}
+/* I wanted these two classes separated due to background color, otherwise would merge into one  */
+div.multiplier {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  background: yellowgreen;
+  margin: 10px;
+}
+
+#donutsPerSecond {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* This makes it responsive */
+@media (min-width: 1000px) {
+  div.upgrades {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  }
+}

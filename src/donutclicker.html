@@ -5,37 +5,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>0 Donuts</title>
-
+    <link rel="stylesheet" href="../styles/donutclicker.css" />
     <script src="../js/donutcliker.js"></script>
   </head>
   <body>
-    <p id="donutsPerSecond">You are gaining 0 donuts per second</p>
-    <img src="../images/donut.png" width="300" height="300" onclick="add()" />
+    <h1>DONUT CLICKER</h1>
+    <div class="donut">
+      <p id="donutsPerSecond">You are gaining 0 donuts per second</p>
+      <img src="../images/donut.png" width="300" height="300" onclick="add()" />
+      <br /><br />
+      <!-- onclick calls forth functions to make the magic happen.  -->
+      <input
+        type="text"
+        id="text"
+        disabled
+        style="text-align:center"
+        value="0"
+      />
+      <br />
+      <button onclick="save()">Save</button>
+      <!-- this saves your total clickers, farms, etc to a local file -->
+      <button onclick="load()">Load</button>
+      <!-- this loads the local file so you can resume-->
+    </div>
     <br /><br />
-    You got:
-    <input type="text" id="text" disabled style="text-align:center" value="0" />
-    <br />
-    <button onclick="save()">Save</button>
-    <button onclick="load()">Load</button>
-    <br /><br />
-    <p id="amountMultiplier">Multiplier Upgrade x2</p>
-    <button onclick="buyMultiplier()">
-      <span id="amountMultiplier2">x2</span>
-    </button>
-    <p id="costMultiplier">200 donuts</p>
-    <p id="currentMultiplier">Your current multiplier is x1</p>
 
-    <p>BUY AN AUTOCLICKER</p>
-    <button onclick="buyAutoClick()">
-      <img src="../images/mouse-hover.png" width="50" height="50" />
-    </button>
-    <p id="costAutoClick">12 Donuts</p>
-    <p id="ammountAutoClick">You Own 0 Auto Clickers</p>
-    <br />
-    <button onclick="buyFarm()">
-      <img src="../images/farm.png" width="50" height="50" />
-    </button>
-    <p id="costFarm">15 Donuts</p>
-    <p id="ammountFarm">You Own 0 Farms</p>
+    <div class="upgrades">
+      <!-- Every upgrade calls its own function to manipulate a variable and do some math -->
+      <div class="upgradebox">
+        <p>BUY A AUTOCLICKER</p>
+        <button onclick="buyAutoClick()">
+          <img src="../images/mouse-hover.png" width="50" height="50" />
+        </button>
+        <p id="costAutoClick">12 Donuts</p>
+        <p id="ammountAutoClick">You Own 0 Auto Clickers</p>
+        <br />
+      </div>
+      <div class="upgradebox">
+        <p>BUY A DONUT FARM</p>
+        <button onclick="buyFarm()">
+          <img src="../images/farm.png" width="50" height="50" />
+        </button>
+        <p id="costFarm">15 Donuts</p>
+        <p id="ammountFarm">You Own 0 Farms</p>
+        <br />
+      </div>
+      <div class="upgradebox">
+        <p>BUY A DONUT MINE</p>
+        <button onclick="buyMine()">
+          <img src="../images/mine.png" width="50" height="50" />
+        </button>
+        <p id="costMine">30 Donuts</p>
+        <p id="ammountMine">You Own 0 Mines</p>
+        <br />
+      </div>
+      <div class="upgradebox">
+        <p>BUY A DONUT FACTORY</p>
+        <button onclick="buyFactory()">
+          <img src="../images/factory.png" width="50" height="50" />
+        </button>
+        <p id="costFactory">45 Donuts</p>
+        <p id="ammountFactory">You Own 0 Factories</p>
+      </div>
+      <div class="multiplier">
+        <p id="amountMultiplier">Multiplier Upgrade x2</p>
+        <button onclick="buyMultiplier()">
+          <span id="amountMultiplier2">x2</span>
+        </button>
+        <p id="costMultiplier">200 donuts</p>
+        <p id="currentMultiplier">Your current multiplier is x2</p>
+      </div>
+    </div>
   </body>
 </html>
